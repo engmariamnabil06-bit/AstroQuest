@@ -1,0 +1,280 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080b18">
+
+  <title>SPACE TWIN | Earth to Space Explorer</title>
+  <meta
+    name="description"
+    content="Explore Earth environments that can help scientists prepare for lunar and Mars exploration."
+  >
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <header class="navbar">
+    <a class="logo" href="#home" aria-label="Space Twin home">
+      <a class="logo" href="#home" aria-label="Space Twin home">
+  <img
+      class="team-logo"
+      src="images/logo.png"
+      alt="SPACE TWIN team logo"
+     >
+     <span>SPACE <strong>TWIN</strong></span>
+    </a>
+
+    <button
+      class="menu-toggle"
+      id="menuToggle"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="navLinks"
+    >
+      ☰
+    </button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#explore">Explore</a>
+      <a href="#compare">Compare</a>
+      <a href="#about">About</a>
+    </nav>
+
+    <a class="nav-cta" href="#explore">Start Exploring ↗</a>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">
+          <span class="status-dot"></span>
+          EARTH ANALOG EXPLORER
+        </p>
+
+        <h1>
+          Earth is our<br>
+          <span>first step</span><br>
+          to space.
+        </h1>
+
+        <p class="hero-description">
+          Discover places on Earth that can help scientists study
+          lunar and Martian environments, test technologies, and
+          prepare for future space missions.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="#explore">
+            Explore Locations <span>↗</span>
+          </a>
+
+          <a class="button button-secondary" href="#about">
+            Discover Our Mission
+          </a>
+        </div>
+
+        <div class="hero-note">
+          <span>✦</span>
+          Built around scientific evidence, not assumptions.
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-label="Space exploration illustration">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="planet planet-mars"></div>
+        <div class="planet planet-earth"></div>
+
+        <div class="planet-label mars-label">
+          <span class="label-dot mars-dot"></span>
+          MARS
+          <small>Planetary exploration</small>
+        </div>
+
+        <div class="planet-label earth-label">
+          <span class="label-dot earth-dot"></span>
+          EARTH
+          <small>Our testing ground</small>
+        </div>
+
+        <span class="star star-one">✦</span>
+        <span class="star star-two">✧</span>
+        <span class="star star-three">✦</span>
+      </div>
+
+      <div class="hero-bottom">
+        <span>01 / DISCOVER</span>
+        <span>EXPLORE · COMPARE · UNDERSTAND</span>
+      </div>
+    </section>
+
+    <section class="section" id="explore">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">THE EXPLORATION BEGINS HERE</p>
+          <h2>Our planet. <span>New possibilities.</span></h2>
+        </div>
+
+        <p class="section-description">
+          Every environment tells a story. Explore candidate locations
+          and discover what scientific data can tell us about them.
+        </p>
+      </div>
+
+      <div class="search-panel">
+        <label class="search-box">
+          <span aria-hidden="true">⌕</span>
+          <input
+            type="search"
+            id="locationSearch"
+            placeholder="Search locations..."
+            aria-label="Search locations"
+          >
+        </label>
+
+        <div class="filter-buttons" aria-label="Filter locations">
+          <button class="filter-button active" data-filter="all">All</button>
+          <button class="filter-button" data-filter="mars">Mars research</button>
+          <button class="filter-button" data-filter="moon">Moon research</button>
+        </div>
+      </div>
+
+      <div class="location-grid" id="locationGrid">
+        <article class="location-card" data-target="mars" data-name="atacama desert">
+          <div class="location-image image-atacama">
+            <span class="location-tag">CANDIDATE SITE</span>
+            <span class="location-number">01</span>
+          </div>
+
+          <div class="location-info">
+            <p class="location-region">CHILE · SOUTH AMERICA</p>
+            <h3>Atacama Desert</h3>
+            <p>
+              An extremely dry environment of interest for studying
+              arid conditions and testing selected instruments.
+            </p>
+            <button class="text-link site-button" data-site="atacama">
+              Explore site <span>↗</span>
+            </button>
+          </div>
+        </article>
+
+        <article class="location-card" data-target="mars moon" data-name="haughton crater">
+          <div class="location-image image-haughton">
+            <span class="location-tag">CANDIDATE SITE</span>
+            <span class="location-number">02</span>
+          </div>
+
+          <div class="location-info">
+            <p class="location-region">DEVON ISLAND · CANADA</p>
+            <h3>Haughton Crater</h3>
+            <p>
+              An impact crater in a polar desert environment that
+              has been studied as an analogue for planetary exploration.
+            </p>
+            <button class="text-link site-button" data-site="haughton">
+              Explore site <span>↗</span>
+            </button>
+          </div>
+        </article>
+
+        <article class="location-card" data-target="moon mars" data-name="icelandic volcanic terrain">
+          <div class="location-image image-iceland">
+            <span class="location-tag">CANDIDATE SITE</span>
+            <span class="location-number">03</span>
+          </div>
+
+          <div class="location-info">
+            <p class="location-region">ICELAND · EUROPE</p>
+            <h3>Volcanic Terrain</h3>
+            <p>
+              Selected volcanic landscapes can help researchers
+              investigate rocky terrain and field-testing conditions.
+            </p>
+            <button class="text-link site-button" data-site="iceland">
+              Explore site <span>↗</span>
+            </button>
+          </div>
+        </article>
+      </div>
+
+      <p class="prototype-note">
+        Prototype locations for exploration only. Scientific properties,
+        mission relevance, and source data must be verified before final use.
+      </p>
+    </section>
+
+    <section class="compare-section" id="compare">
+      <div class="compare-content">
+        <p class="eyebrow">BEYOND THE SURFACE</p>
+        <h2>Similarity is a question.<br><span>Evidence is the answer.</span></h2>
+        <p>
+          Earth is not the Moon or Mars. But careful comparisons can
+          help us understand which environments are useful for particular
+          research and testing goals.
+        </p>
+        <a class="button button-primary" href="#explore">
+          Explore candidate sites <span>↗</span>
+        </a>
+      </div>
+
+      <div class="compare-visual">
+        <div class="compare-orb orb-earth">
+          <span>EARTH</span>
+        </div>
+        <div class="compare-connector">
+          <span>COMPARE DATA</span>
+          <span class="connector-line"></span>
+          <span>NOT ASSUMPTIONS</span>
+        </div>
+        <div class="compare-orb orb-mars">
+          <span>MARS</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section section" id="about">
+      <p class="eyebrow">OUR MISSION</p>
+      <h2>Preparing for space <span>starts on Earth.</span></h2>
+      <p>
+        SPACE TWIN is a concept for exploring terrestrial analogue
+        environments through scientific data, transparent comparisons,
+        and accessible explanations.
+      </p>
+      <p class="source-note">
+        Scientific claims and datasets will be linked to their original
+        sources after verification.
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+<a class="logo" href="#home" aria-label="Space Twin home">
+  <img
+    class="team-logo"
+    src="images/logo.png"
+    alt="SPACE TWIN team logo"
+  >
+  <span>SPACE <strong>TWIN</strong></span>
+</a>
+    <p>Explore responsibly. Compare scientifically.</p>
+    <a href="#home">Back to top ↑</a>
+  </footer>
+
+  <dialog class="site-dialog" id="siteDialog" aria-labelledby="dialogTitle">
+    <button class="dialog-close" id="dialogClose" aria-label="Close dialog">×</button>
+    <p class="eyebrow">LOCATION PROFILE · PREVIEW</p>
+    <h2 id="dialogTitle">Location</h2>
+    <p id="dialogDescription"></p>
+    <p class="source-note">
+      This is a preliminary overview, not a verified scientific comparison.
+      Confirm site-specific data and sources before drawing conclusions.
+    </p>
+  </dialog>
+</body>
+</html>
