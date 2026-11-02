@@ -1,0 +1,621 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="ASTROQUEST explores Earth's extreme environments and their relevance to future Moon and Mars missions.">
+
+  <title>ASTROQUEST | Earth to Space Explorer</title>
+
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="stars"></div>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <a href="#home" class="brand">
+      <img src="images/logo.png" alt="AstroQuest logo">
+      <span>ASTRO<span class="accent">QUEST</span></span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+      <i data-lucide="menu"></i>
+    </button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#mission">Mission</a>
+      <a href="#locations">Locations</a>
+      <a href="#map-section">Explore Map</a>
+      <a href="#comparison">Comparison</a>
+      <a href="#resources">Resources</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+
+      <div class="hero-content reveal">
+
+        <div class="hero-badge">
+          <span class="status-dot"></span>
+          NASA SPACE APPS CHALLENGE
+        </div>
+
+        <h1>
+          EARTH TO
+          <span>SPACE</span>
+          EXPLORER
+        </h1>
+
+        <p class="hero-description">
+          Discover Earth's extreme environments and explore how
+          they help scientists prepare for future missions to the
+          Moon and Mars.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#locations" class="btn primary-btn">
+            <span>Explore Locations</span>
+            <i data-lucide="arrow-up-right"></i>
+          </a>
+
+          <a href="#mission" class="btn secondary-btn">
+            <span>Discover Our Mission</span>
+            <i data-lucide="arrow-down"></i>
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div>
+            <strong>03</strong>
+            <span>Earth Analogs</span>
+          </div>
+
+          <div>
+            <strong>02</strong>
+            <span>Space Destinations</span>
+          </div>
+
+          <div>
+            <strong>01</strong>
+            <span>Shared Mission</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ANIMATED SOLAR SYSTEM -->
+      <div class="hero-visual reveal">
+
+        <div class="solar-system">
+
+          <div class="sun-core">
+            <div class="sun-glow"></div>
+          </div>
+
+          <div class="orbit-path orbit-earth">
+            <div class="orbit-planet earth-planet">
+              <span class="planet-label">EARTH</span>
+            </div>
+          </div>
+
+          <div class="orbit-path orbit-moon">
+            <div class="orbit-planet moon-planet">
+              <span class="planet-label">MOON</span>
+            </div>
+          </div>
+
+          <div class="orbit-path orbit-mars">
+            <div class="orbit-planet mars-planet">
+              <span class="planet-label">MARS</span>
+            </div>
+          </div>
+
+          <div class="solar-caption">
+            <span class="solar-dot"></span>
+            SOLAR SYSTEM EXPLORATION
+          </div>
+
+        </div>
+
+      </div>
+
+      <a href="#mission" class="scroll-indicator">
+        <span>SCROLL TO EXPLORE</span>
+        <i data-lucide="chevrons-down"></i>
+      </a>
+
+    </section>
+
+    <!-- MISSION -->
+    <section class="section mission-section" id="mission">
+
+      <div class="section-heading reveal">
+        <p class="eyebrow">OUR PURPOSE</p>
+        <h2>THE MISSION</h2>
+        <p>
+          Why do scientists study extreme environments on Earth?
+        </p>
+      </div>
+
+      <div class="mission-grid">
+
+        <article class="mission-card reveal">
+          <span class="card-number">01 / EXPLORE</span>
+          <div class="mission-icon">
+            <i data-lucide="globe"></i>
+          </div>
+          <h3>Explore Earth</h3>
+          <p>
+            Identify extreme environments that share selected
+            characteristics with the Moon and Mars.
+          </p>
+        </article>
+
+        <article class="mission-card reveal">
+          <span class="card-number">02 / INVESTIGATE</span>
+          <div class="mission-icon">
+            <i data-lucide="microscope"></i>
+          </div>
+          <h3>Study the Conditions</h3>
+          <p>
+            Investigate geology, temperature, terrain, water,
+            dust and environmental challenges.
+          </p>
+        </article>
+
+        <article class="mission-card reveal">
+          <span class="card-number">03 / PREPARE</span>
+          <div class="mission-icon">
+            <i data-lucide="rocket"></i>
+          </div>
+          <h3>Prepare for Space</h3>
+          <p>
+            Understand how Earth research can support future
+            robotic and human exploration missions.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- LOCATIONS -->
+    <section class="section locations-section" id="locations">
+
+      <div class="section-heading reveal">
+        <p class="eyebrow">THREE EXTREME ENVIRONMENTS</p>
+        <h2>EARTH ANALOGS</h2>
+        <p>
+          Explore three remarkable places that help us understand
+          selected conditions beyond Earth.
+        </p>
+      </div>
+
+      <div class="locations-grid">
+
+        <!-- ATACAMA -->
+        <article class="location-card reveal">
+
+          <div class="location-image atacama-image">
+            <span class="location-tag">CHILE</span>
+            <span class="location-index">01</span>
+          </div>
+
+          <div class="location-content">
+            <p class="location-type">EXTREME ARID ENVIRONMENT</p>
+            <h3>Atacama Desert</h3>
+
+            <p>
+              One of the driest places on Earth. Its extreme
+              aridity and soil conditions make it valuable for
+              studying selected aspects of Mars exploration.
+            </p>
+
+            <div class="location-facts">
+              <span><i data-lucide="sun"></i> Extreme dryness</span>
+              <span><i data-lucide="flask-conical"></i> Soil research</span>
+              <span><i data-lucide="orbit"></i> Mars analog</span>
+            </div>
+
+            <button class="details-btn" data-location="atacama">
+              <span>Explore Location</span>
+              <i data-lucide="arrow-up-right"></i>
+            </button>
+          </div>
+
+        </article>
+
+        <!-- MCMURDO -->
+        <article class="location-card reveal">
+
+          <div class="location-image mcmurdo-image">
+            <span class="location-tag">ANTARCTICA</span>
+            <span class="location-index">02</span>
+          </div>
+
+          <div class="location-content">
+            <p class="location-type">POLAR DESERT ENVIRONMENT</p>
+            <h3>McMurdo Dry Valleys</h3>
+
+            <p>
+              A cold, dry Antarctic landscape with exposed rock,
+              frozen ground and unusual water systems. It offers
+              insights into polar and cold-desert processes.
+            </p>
+
+            <div class="location-facts">
+              <span><i data-lucide="snowflake"></i> Extreme cold</span>
+              <span><i data-lucide="droplets"></i> Ice and water</span>
+              <span><i data-lucide="microscope"></i> Polar research</span>
+            </div>
+
+            <button class="details-btn" data-location="mcmurdo">
+              <span>Explore Location</span>
+              <i data-lucide="arrow-up-right"></i>
+            </button>
+          </div>
+
+        </article>
+
+        <!-- MAUNA KEA -->
+        <article class="location-card reveal">
+
+          <div class="location-image mauna-image">
+            <span class="location-tag">HAWAII</span>
+            <span class="location-index">03</span>
+          </div>
+
+          <div class="location-content">
+            <p class="location-type">VOLCANIC HIGH-ALTITUDE TERRAIN</p>
+            <h3>Mauna Kea</h3>
+
+            <p>
+              A high volcanic mountain with rocky terrain and
+              volcanic materials. Its landscape can support
+              research into geology and exploration operations.
+            </p>
+
+            <div class="location-facts">
+              <span><i data-lucide="mountain"></i> Volcanic geology</span>
+              <span><i data-lucide="mountain-snow"></i> High altitude</span>
+              <span><i data-lucide="satellite"></i> Terrain research</span>
+            </div>
+
+            <button class="details-btn" data-location="mauna">
+              <span>Explore Location</span>
+              <i data-lucide="arrow-up-right"></i>
+            </button>
+          </div>
+
+        </article>
+
+      </div>
+    </section>
+
+    <!-- REAL MAP -->
+    <section class="section map-section" id="map-section">
+
+      <div class="section-heading reveal">
+        <p class="eyebrow">GEOGRAPHIC EXPLORATION</p>
+        <h2>EXPLORE THE MAP</h2>
+        <p>
+          Locate our three Earth analog environments on a real
+          interactive geographic map.
+        </p>
+      </div>
+
+      <div class="map-layout reveal">
+
+        <aside class="map-sidebar">
+
+          <div class="map-sidebar-heading">
+            <span class="live-dot"></span>
+            EXPEDITION LOCATIONS
+          </div>
+
+          <button class="map-location active" data-map="atacama">
+            <span class="map-number">01</span>
+            <span class="map-location-text">
+              <strong>Atacama Desert</strong>
+              <small>Chile, South America</small>
+            </span>
+            <i data-lucide="arrow-up-right"></i>
+          </button>
+
+          <button class="map-location" data-map="mcmurdo">
+            <span class="map-number">02</span>
+            <span class="map-location-text">
+              <strong>McMurdo Dry Valleys</strong>
+              <small>Antarctica</small>
+            </span>
+            <i data-lucide="arrow-up-right"></i>
+          </button>
+
+          <button class="map-location" data-map="mauna">
+            <span class="map-number">03</span>
+            <span class="map-location-text">
+              <strong>Mauna Kea</strong>
+              <small>Hawaii, Pacific Ocean</small>
+            </span>
+            <i data-lucide="arrow-up-right"></i>
+          </button>
+
+          <div class="map-note">
+            <strong>MAP GUIDE</strong>
+            <p>
+              Switch between satellite imagery, standard streets
+              and terrain using the map layer selector.
+            </p>
+          </div>
+
+          <button class="reset-map" id="resetMap">
+            <i data-lucide="maximize"></i>
+            View All Locations
+          </button>
+
+        </aside>
+
+        <div class="map-container">
+          <div id="worldMap"></div>
+
+          <div class="map-caption">
+            <span>INTERACTIVE EARTH MAP</span>
+            <span>03 LOCATIONS</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- COMPARISON -->
+    <section class="section comparison-section" id="comparison">
+
+      <div class="section-heading reveal">
+        <p class="eyebrow">SCIENCE & DISCOVERY</p>
+        <h2>EARTH VS SPACE</h2>
+        <p>
+          What can these environments teach us about the Moon and Mars?
+        </p>
+      </div>
+
+      <div class="comparison-table-wrapper reveal">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Research Factor</th>
+              <th>Earth Analog</th>
+              <th>Space Relevance</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Extreme dryness</td>
+              <td>Atacama Desert</td>
+              <td>Mars surface research</td>
+            </tr>
+            <tr>
+              <td>Cold and ice</td>
+              <td>McMurdo Dry Valleys</td>
+              <td>Polar environments and ice studies</td>
+            </tr>
+            <tr>
+              <td>Volcanic rocks</td>
+              <td>Mauna Kea</td>
+              <td>Planetary geology and terrain research</td>
+            </tr>
+            <tr>
+              <td>Field operations</td>
+              <td>All three locations</td>
+              <td>Testing equipment and exploration methods</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </section>
+
+    <!-- LIMITATIONS -->
+    <section class="section limitations-section">
+
+      <div class="limitations-content reveal">
+        <p class="eyebrow">IMPORTANT SCIENTIFIC NOTE</p>
+
+        <h2>
+          EARTH IS NOT
+          <span>ANOTHER PLANET.</span>
+        </h2>
+
+        <p>
+          Earth analogs are useful research environments, but none
+          of them perfectly reproduces the Moon or Mars.
+        </p>
+
+        <div class="limitation-list">
+
+          <div>
+            <span>01</span>
+            <p>
+              <strong>Gravity</strong>
+              Earth's gravity is different from lunar and Martian gravity.
+            </p>
+          </div>
+
+          <div>
+            <span>02</span>
+            <p>
+              <strong>Atmosphere</strong>
+              The Moon has almost no atmosphere, while Mars has a very
+              thin atmosphere.
+            </p>
+          </div>
+
+          <div>
+            <span>03</span>
+            <p>
+              <strong>Radiation</strong>
+              Earth's magnetic field and atmosphere provide protection
+              that is not available in the same way on the Moon and Mars.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="limitations-visual reveal">
+        <div class="space-circle earth-circle">
+          <span>EARTH</span>
+        </div>
+        <div class="space-circle moon-circle">
+          <span>MOON</span>
+        </div>
+        <div class="space-circle mars-circle">
+          <span>MARS</span>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- RESOURCES -->
+    <section class="section resources-section" id="resources">
+
+      <div class="section-heading reveal">
+        <p class="eyebrow">EXPLORE REAL SCIENCE</p>
+        <h2>NASA RESOURCES</h2>
+        <p>
+          Discover trusted scientific data and official space exploration resources.
+        </p>
+      </div>
+
+      <div class="resources-grid">
+
+        <a href="https://science.nasa.gov/solar-system/mars/"
+           target="_blank" rel="noopener" class="resource-card reveal">
+          <i data-lucide="orbit" class="resource-icon"></i>
+          <h3>Mars Exploration</h3>
+          <p>Discover Mars, its surface, climate and exploration missions.</p>
+          <span class="resource-link">VISIT NASA <i data-lucide="external-link"></i></span>
+        </a>
+
+        <a href="https://science.nasa.gov/moon/"
+           target="_blank" rel="noopener" class="resource-card reveal">
+          <i data-lucide="moon" class="resource-icon"></i>
+          <h3>Moon Science</h3>
+          <p>Explore lunar science, geology and future exploration.</p>
+          <span class="resource-link">VISIT NASA <i data-lucide="external-link"></i></span>
+        </a>
+
+        <a href="https://earthdata.nasa.gov/"
+           target="_blank" rel="noopener" class="resource-card reveal">
+          <i data-lucide="globe" class="resource-icon"></i>
+          <h3>NASA Earthdata</h3>
+          <p>Access Earth observation data and environmental research.</p>
+          <span class="resource-link">VISIT NASA <i data-lucide="external-link"></i></span>
+        </a>
+
+        <a href="https://www.nasa.gov/"
+           target="_blank" rel="noopener" class="resource-card reveal">
+          <i data-lucide="rocket" class="resource-icon"></i>
+          <h3>NASA Official Website</h3>
+          <p>Read about NASA missions, discoveries and research.</p>
+          <span class="resource-link">VISIT NASA <i data-lucide="external-link"></i></span>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section about-section">
+      <div class="about-box reveal">
+        <p class="eyebrow">OUR VISION</p>
+        <h2>THE NEXT STEP<br>BEGINS ON EARTH.</h2>
+        <p>
+          By studying Earth's most extreme environments, we can
+          develop better questions, tools and strategies for
+          exploring worlds beyond our own.
+        </p>
+
+        <a href="#home" class="btn primary-btn">
+          <span>Back to the Beginning</span>
+          <i data-lucide="arrow-up"></i>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-brand">
+      <img src="images/logo.png" alt="AstroQuest logo">
+      <span>ASTRO<span class="accent">QUEST</span></span>
+    </div>
+
+    <p>Earth to Space Explorer | NASA Space Apps Challenge</p>
+    <p class="footer-small">
+      An educational exploration of terrestrial analog environments.
+    </p>
+  </footer>
+
+  <!-- LOCATION MODAL -->
+  <div class="modal" id="locationModal">
+    <div class="modal-content">
+
+      <button class="modal-close" id="modalClose" aria-label="Close dialog">
+        <i data-lucide="x"></i>
+      </button>
+
+      <p class="eyebrow" id="modalTag">LOCATION DETAILS</p>
+      <h2 id="modalTitle"></h2>
+      <p id="modalDescription"></p>
+
+      <div class="modal-info-grid">
+        <div>
+          <span>RESEARCH VALUE</span>
+          <strong id="modalValue"></strong>
+        </div>
+
+        <div>
+          <span>SPACE CONNECTION</span>
+          <strong id="modalConnection"></strong>
+        </div>
+      </div>
+
+      <div class="modal-limit">
+        <strong>IMPORTANT LIMITATION</strong>
+        <p id="modalLimitation"></p>
+      </div>
+
+      <button class="btn primary-btn modal-map-button" id="modalMapButton">
+        <span>Locate on Map</span>
+        <i data-lucide="map-pin"></i>
+      </button>
+
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
